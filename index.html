@@ -12,20 +12,20 @@
         <script src="/views/liberty/js/skin_set_do.js.cache_v2"></script>
 
         <meta charset="utf-8">
-        {% if imp[3][0] != 0 %}
-            <title>{{imp[0]}} {{imp[3][0]}} - {{imp[1][0]}}</title>
+        {% if imp3[0] != 0 %}
+            <title>{{imp[0]}} {{imp3[0]}} - {{imp1[0]}}</title>
         {% else %}
-            <title>{{imp[0]}} - {{imp[1][0]}}</title>
+            <title>{{imp[0]}} - {{imp1[0]}}</title>
         {% endif %}
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.css" integrity="sha512-DD6Lm09YDHzhW3K4eLJ9Y7sFrBwtCF+KuSWOLYFqKsZ6RX4ifCu9vWqM4R+Uy++aBWe6wD4csgQRzGKp5vP6tg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0-alpha.2/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.3/themes/base/jquery-ui.min.css" integrity="sha512-8PjjnSP8Bw/WNPxF6wkklW6qlQJdWJc/3w/ZQPvZ/1bjVDkrrSqLe9mfPYrMxtnzsXFPc434+u4FHLnLjXTSsg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <link rel="stylesheet" href="/views/liberty/css/default.css.cache_v2">
         <link rel="stylesheet" href="/views/liberty/css/default_mobile.css.cache_v1">
-        {{imp[3][3]|safe}}
+        {{imp3[3]|safe}}
         <link rel="stylesheet" href="/views/liberty/css/style.css.cache_v10">
         {% if request.cookies.get('main_css_darkmode', '') == '1' %}
-            {{imp[3][5]|safe}}
+            {{imp3[5]|safe}}
             <link rel="stylesheet" href="/views/liberty/css/dark.css.cache_v6">
         {% endif %}
         <link href="https://fonts.googleapis.com/css?family=Dokdo|Gaegu|Nanum+Gothic|Nanum+Gothic+Coding|Nanum+Myeongjo|Noto+Serif+KR|Noto+Sans+KR&amp;display=swap&amp;subset=korean" rel="stylesheet">
@@ -38,21 +38,21 @@
         
         <script defer src="/views/liberty/js/layout.js.cache_v3"></script>
         <script defer src="/views/liberty/js/skin_set.js.cache_v8"></script>
-        {{imp[1][5]|safe}}
-        {{imp[2][3]|safe}}
-        {% if imp[3][0] != 0 %}
-            <meta name="title" content="{{imp[0]}}{{imp[3][0]}} - {{imp[1][0]}}">
+        {{imp1[5]|safe}}
+        {{imp2[3]|safe}}
+        {% if imp3[0] != 0 %}
+            <meta name="title" content="{{imp[0]}}{{imp3[0]}} - {{imp1[0]}}">
         {% else %}
-            <meta name="title" content="{{imp[0]}} - {{imp[1][0]}}">
+            <meta name="title" content="{{imp[0]}} - {{imp1[0]}}">
         {% endif %}
         <meta name="keywords" content="{{imp[0]}}">
-        <meta name="description" content="{{imp[3][6]}}">
+        <meta name="description" content="{{imp3[6]}}">
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body class="Liberty">
         <div class="nav-wrapper navbar-fixed-top">
             <nav class="navbar navbar-dark">
-                <a class="navbar-brand" href="/">{{imp[1][4]|safe}}</a>
+                <a class="navbar-brand" href="/">{{imp1[4]|safe}}</a>
                 <ul class="nav navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link" href="/recent_changes"><span class="fa fa-refresh"></span><span class="hide-title">{{'recent_change'|load_lang}}</span></a>
@@ -73,18 +73,18 @@
                             <a class="dropdown-item" href="/change/skin_set"><span class="fa fa-cog"></span><span class="hide-title">{{'skin_set'|load_lang}}</span></a>
                             <a class="dropdown-item" href="/upload"><span class="fa fa-upload"></span><span class="hide-title">{{'upload'|load_lang}}</span></a>
                             <a class="dropdown-item" href="/other"><span class="fa fa-cogs"></span><span class="hide-title">{{'other_tool'|load_lang}}</span></a>
-                            {% if imp[2][9] != '0' %}
+                            {% if imp2[9] != '0' %}
                                 <a class="dropdown-item" href="/manager"><span class="fa fa-folder"></span><span class="hide-title">{{'admin_tool'|load_lang}}</span></a>
                             {% endif %}
                         </div>
                     </li>
-                    {% if imp[1][6] != '' %}
+                    {% if imp1[6] != '' %}
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle dropdown-toggle-fix" href="#" data-toggle="dropdown" aria-expanded="false">
                                 <span class="fa fa-plus-circle"></span><span class="hide-title">{{'added_menu'|load_lang}}</span>
                             </a>
                             <div class="dropdown-menu" role="menu">
-                                {% for added_top_menu in imp[1][6] %}
+                                {% for added_top_menu in imp1[6] %}
                                     <a class="dropdown-item" href="{{added_top_menu[1]}}">
                                         <span class="fa fa-plus"></span>
                                         <span class="hide-title">{{added_top_menu[0]}}</span>
@@ -97,25 +97,25 @@
                 <div class="navbar-login">
                     <div class="dropdown login-menu">
                         <a type="button" id="login-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle">
-                            {% if imp[2][2] == 0 %}
+                            {% if imp2[2] == 0 %}
                                 <span class="fa fa-sign-in" style="padding: 0; padding-top: 0.35rem;"></span>
-                            {% elif imp[2][4] != '' %}
-                                <img class="profile-img" src="https://secure.gravatar.com/avatar/{{imp[2][4]|md5_replace}}?d=identicon">
+                            {% elif imp2[4] != '' %}
+                                <img class="profile-img" src="https://secure.gravatar.com/avatar/{{imp2[4]|md5_replace}}?d=identicon">
                             {% else %}
                                 <img class="profile-img" src="https://secure.gravatar.com/avatar/00000000000000000000000000000000?d=identicon&f=y">
                             {% endif %}
                         </a>
                         <div aria-labelledby="login-menu" class="dropdown-menu dropdown-menu-right login-dropdown-menu">
                             <a href="/user" class="dropdown-item">
-                                {% if imp[2][2] == 1 %}
-                                    <b>{{imp[2][5]}}</b>
+                                {% if imp2[2] == 1 %}
+                                    <b>{{imp2[5]}}</b>
                                 {% else %}
-                                    <b>{{imp[2][10]}}</b>
+                                    <b>{{imp2[10]}}</b>
                                 {% endif %}
                                 <br>
-                                {% if imp[2][2] == 1 %}
-                                    {% if imp[2][6] == '1' %}
-                                        {% if 'owner' in imp[2][9] %}
+                                {% if imp2[2] == 1 %}
+                                    {% if imp2[6] == '1' %}
+                                        {% if 'owner' in imp2[9] %}
                                             {{'owner'|load_lang}}
                                         {% else %}
                                             {{'admin'|load_lang}}
@@ -131,8 +131,8 @@
                             <a href="/user" class="dropdown-item">{{'user_tool'|load_lang}}</a>
                             <a href="/change" class="dropdown-item">{{'user_setting'|load_lang}}</a>
                             <div class="dropdown-divider"></div>
-                            {% if imp[2][2] == 1 %}
-                                <a href="/alarm" class="dropdown-item">{{'alarm'|load_lang}} ({{imp[2][8]}})</a>
+                            {% if imp2[2] == 1 %}
+                                <a href="/alarm" class="dropdown-item">{{'alarm'|load_lang}} ({{imp2[8]}})</a>
                                 <a href="/watch_list" class="dropdown-item">{{'watchlist'|load_lang}}</a>
                                 <a href="/star_doc" class="dropdown-item">{{'star_doc'|load_lang}}</a>
                                 <div class="dropdown-divider"></div>
@@ -221,12 +221,12 @@
                     <div class="title">
                         <h1 id="main_title">
                             {{imp[0]}}
-                            {% if imp[3][0] != 0 %}
-                                <sub>{{imp[3][0]}}</sub>
+                            {% if imp3[0] != 0 %}
+                                <sub>{{imp3[0]}}</sub>
                             {% endif %}
                         </h1>
-                        {% if imp[3][1] != 0 %}
-                            <span>{{'last_edit_time'|load_lang}} : {{imp[3][1]}} | {{'page_view'|load_lang}} : {{imp[3][7]}}</span>
+                        {% if imp3[1] != 0 %}
+                            <span>{{'last_edit_time'|load_lang}} : {{imp3[1]}} | {{'page_view'|load_lang}} : {{imp3[7]}}</span>
                         {% endif %}
                     </div>
                 </div>
@@ -235,7 +235,7 @@
                 </div>
                 <div class="liberty-footer" id="bottom">
                     <p>
-                        {{imp[1][1]|safe}}
+                        {{imp1[1]|safe}}
                     </p>
                     <div id="powered">
                         <a href="https://github.com/openNAMU/openNAMU"><img src="/views/main_css/file/s_logo.png" width="100px"></a>
