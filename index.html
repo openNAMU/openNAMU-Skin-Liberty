@@ -211,7 +211,7 @@
                                             <a class="btn btn-secondary tools-btn" href="/{{sub_d[0]}}">{{sub_d[1]}}</a>
                                         {% endif %}
                                     {% endif %}
-                                    {% if menu[loop.index] and loop.index <= 5 %}
+                                    {% if not menu[loop.index] and loop.index > 5 %}
                                         </div>
                                     {% endif %}
                                 {% endfor %}
