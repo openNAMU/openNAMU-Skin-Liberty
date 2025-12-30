@@ -191,7 +191,7 @@
             </div>
             <div class="container-fluid liberty-content">
                 <div class="liberty-content-header">
-                    {% if not menu == 0 %}
+                    {% if menu != 0 %}
                         <div class="content-tools">
                             <div class="btn-group" role="group" aria-label="content-tools">
                                 {% for sub_d in menu %}
@@ -211,7 +211,7 @@
                                             <a class="btn btn-secondary tools-btn" href="/{{sub_d[0]}}">{{sub_d[1]}}</a>
                                         {% endif %}
                                     {% endif %}
-                                    {% if not menu[loop.index] and loop.index > 5 %}
+                                    {% if menu[loop.index] and loop.index <= 5 %}
                                         </div>
                                     {% endif %}
                                 {% endfor %}
